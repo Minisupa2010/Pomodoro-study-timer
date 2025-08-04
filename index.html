@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pomodoro Study Planner</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="https://i.ibb.co/k2YW2rPQ/icon-180.png">
+</head>
+<body>
+    <div class="app">
+        <header>
+            <div class="header-content">
+                <h1>Pomodoro</h1>
+                <button id="theme-toggle" class="icon-button">
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z M11 1h2v3h-2V1Zm0 19h2v3h-2v-3ZM3.55 4.95l1.414-1.414 2.12 2.12-1.413 1.415-2.12-2.12Zm15.556 15.556-1.414 1.414-2.12-2.12 1.413-1.415 2.12 2.12Zm-14.14 0 2.12-2.12 1.415 1.413-2.12 2.12-1.415-1.413Zm15.554-1.414-2.12-2.12-1.415 1.413 2.12 2.12 1.415-1.413ZM1 11v2h3v-2H1Zm19 0v2h3v-2h-3Z"/></svg>
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2.007a9.993 9.993 0 0 1 8.398 4.342 9.993 9.993 0 0 1-2.908 13.256A9.993 9.993 0 0 1 2.007 12c0-4.444 2.89-8.19 6.883-9.522A9.92 9.92 0 0 1 11.99 2.007ZM10.5 20.003a8 8 0 1 0-7.01-12.424A8 8 0 0 0 10.5 20.003Z"/></svg>
+                </button>
+            </div>
+        </header>
+
+        <main>
+            <section class="card timer-card">
+                <div class="timer-modes">
+                    <button id="mode-focus" class="mode-button active">Focus</button>
+                    <button id="mode-short" class="mode-button">Short Break</button>
+                    <button id="mode-long" class="mode-button">Long Break</button>
+                </div>
+                <div id="timer">25:00</div>
+                <div class="timer-controls">
+                    <button id="start" class="control-button">Start</button>
+                    <button id="reset" class="control-button secondary">Reset</button>
+                </div>
+            </section>
+
+            <section class="card task-card">
+                <h2>Tasks</h2>
+                <div class="task-input-wrapper">
+                    <input type="text" id="new-task" placeholder="Add a new task..." />
+                    <button id="add-task" class="add-button">+</button>
+                </div>
+                <ul id="task-list"></ul>
+            </section>
+        </main>
+        
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2025 Pomodoro Planner</p>
+                <button id="fullscreen-toggle" class="icon-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M16 3h5v5l-1.6-1.6L15 10.8l-1.4-1.4L18 5l-2-2ZM8 21H3v-5l2 2 4.4-4.4 1.4 1.4L6.4 19 8 21Zm13-8v-5h-5l2 2-4.4 4.4 1.4 1.4L19 9.6l2 1.4Z"/></svg>
+                </button>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
+</body>
+</html>
