@@ -22,23 +22,6 @@ A lightweight Pomodoro Timer app built using HTML, CSS, and vanilla JavaScript.
 
 The app is fully responsive and works well on mobile devices.
 
-## 🌐 Deploy to GitHub Pages
-
-1. Push this project to your GitHub repository.
-2. Go to **Settings > Pages**.
-3. Select the branch as `main` and root folder as `/`.
-4. Click **Save** and your site will be published at `https://your-username.github.io/repo-name`.
-
-## 📂 Project Structure
-
-```
-vanilla-pomodoro-app/
-├── index.html
-├── style.css
-├── script.js
-└── README.md
-```
-
 ## 📄 License
 
 MIT License
